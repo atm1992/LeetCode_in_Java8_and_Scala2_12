@@ -6,4 +6,4 @@ def transform_name(name: str) -> None:
 
 
 if __name__ == '__main__':
-    transform_name('a2_add-two-numbers.Solution')
+    transform_name('a4_median-of-two-sorted-arrays.Solution')
