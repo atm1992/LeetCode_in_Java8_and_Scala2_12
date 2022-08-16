@@ -43,8 +43,6 @@ object Solution {
     }
 }
 
-object Test {
-    def main(args: Array[String]): Unit = {
-        Solution.twoSum(Array(2, 7, 11, 15), 9).mkString(", ").foreach(print)
-    }
+object Test extends App {
+    Solution.twoSum(Array(2, 7, 11, 15), 9).mkString(", ").foreach(print)
 }

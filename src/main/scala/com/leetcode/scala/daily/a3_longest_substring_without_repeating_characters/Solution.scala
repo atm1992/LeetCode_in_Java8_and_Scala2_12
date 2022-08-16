@@ -51,8 +51,6 @@ object Solution {
     }
 }
 
-object Test {
-    def main(args: Array[String]): Unit = {
-        println(Solution.lengthOfLongestSubstring("abcabcbb"))
-    }
+object Test extends App {
+    println(Solution.lengthOfLongestSubstring("abcabcbb"))
 }
