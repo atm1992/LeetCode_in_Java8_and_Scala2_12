@@ -111,8 +111,7 @@ object Solution3 {
      */
     def longestPalindrome(s: String): String = {
         import scala.collection.mutable
-        val sb = new mutable.StringBuilder()
-        sb.append("^#")
+        val sb = new mutable.StringBuilder("^#")
         for (ch <- s) {
             sb.append(ch)
             sb.append('#')
