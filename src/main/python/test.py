@@ -6,4 +6,4 @@ def transform_name(name: str) -> None:
 
 
 if __name__ == '__main__':
-    transform_name('a5_longest-palindromic-substring.Solution')
+    transform_name('a6_zigzag-conversion.Solution')
