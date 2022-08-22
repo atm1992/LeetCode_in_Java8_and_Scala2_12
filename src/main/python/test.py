@@ -6,4 +6,4 @@ def transform_name(name: str) -> None:
 
 
 if __name__ == '__main__':
-    transform_name('a1115_print-foobar-alternately.FooBar')
+    transform_name('a8_string_to_integer_atoi.Solution')
