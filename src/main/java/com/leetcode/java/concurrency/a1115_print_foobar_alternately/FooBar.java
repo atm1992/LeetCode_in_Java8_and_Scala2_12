@@ -91,12 +91,15 @@ class FooBar2 {
 
         for (int i = 0; i < n; i++) {
             synchronized (obj) {
+                //循环判断，防止虚假唤醒。不能用if
                 while (!flag) {
                     obj.wait();
                 }
+                //干活
                 // printFoo.run() outputs "foo". Do not change or remove this line.
                 printFoo.run();
                 flag = false;
+                //通知
                 obj.notifyAll();
             }
         }
@@ -106,12 +109,15 @@ class FooBar2 {
 
         for (int i = 0; i < n; i++) {
             synchronized (obj) {
+                //循环判断，防止虚假唤醒。不能用if
                 while (flag) {
                     obj.wait();
                 }
+                //干活
                 // printBar.run() outputs "bar". Do not change or remove this line.
                 printBar.run();
                 flag = true;
+                //通知
                 obj.notifyAll();
             }
         }
