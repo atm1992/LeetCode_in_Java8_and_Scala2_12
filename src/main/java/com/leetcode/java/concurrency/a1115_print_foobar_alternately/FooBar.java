@@ -84,6 +84,7 @@ class FooBar {
 class FooBar2 {
     private int n;
     // 标志位，控制执行顺序：true执行printFoo；false执行printBar。
+    //一个线程修改完主内存中的flag后，会立即通知其它线程
     private volatile boolean flag = true;
     // 锁对象
     private final Object obj = new Object();
@@ -134,6 +135,7 @@ class FooBar2 {
  */
 class FooBar3 {
     private int n;
+    //一个线程修改完主内存中的state后，会立即通知其它线程
     private volatile int state;
 
     public FooBar3(int n) {

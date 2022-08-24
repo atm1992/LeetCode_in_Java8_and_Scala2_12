@@ -83,6 +83,7 @@ class ZeroEvenOdd {
  */
 class ZeroEvenOdd2 {
     private int n;
+    //一个线程修改完主内存中的state后，会立即通知其它线程
     private volatile int state;
 
     public ZeroEvenOdd2(int n) {
