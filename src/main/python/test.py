@@ -6,4 +6,4 @@ def transform_name(name: str) -> None:
 
 
 if __name__ == '__main__':
-    transform_name('a8_string_to_integer_atoi.Solution')
+    transform_name('a9_palindrome-number.Solution')
