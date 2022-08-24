@@ -30,10 +30,7 @@ package com.leetcode.scala.daily.a2_add_two_numbers
  * 由于两个链表都是非空的，所以可任选其中一个作为返回结果的头节点，如选择l1
  */
 //Definition for singly-linked list.
-class ListNode(_x: Int = 0, _next: ListNode = null) {
-    var next: ListNode = _next
-    var x: Int = _x
-}
+class ListNode(var x: Int = 0, var next: ListNode = null)
 
 object Solution {
     /**
