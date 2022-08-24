@@ -6,4 +6,4 @@ def transform_name(name: str) -> None:
 
 
 if __name__ == '__main__':
-    transform_name('a9_palindrome-number.Solution')
+    transform_name('a1116_print-zero-even-odd.ZeroEvenOdd')

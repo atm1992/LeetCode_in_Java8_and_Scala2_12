@@ -39,9 +39,12 @@ import java.util.concurrent.Semaphore;
  * Constraints:
  * 1 <= n <= 1000
  */
+
+/**
+ * 方法一：计数信号量Semaphore
+ */
 class FooBar {
     private int n;
-    //计数信号量
     private Semaphore fooSema = new Semaphore(1);
     private Semaphore barSema = new Semaphore(0);
 
@@ -75,7 +78,9 @@ class FooBar {
     }
 }
 
-
+/**
+ * 方法二：synchronized + volatile
+ */
 class FooBar2 {
     private int n;
     // 标志位，控制执行顺序：true执行printFoo；false执行printBar。
@@ -120,6 +125,40 @@ class FooBar2 {
                 //通知
                 obj.notifyAll();
             }
+        }
+    }
+}
+
+/**
+ * 方法三：Thread.yield() + volatile
+ */
+class FooBar3 {
+    private int n;
+    private volatile int state;
+
+    public FooBar3(int n) {
+        this.n = n;
+    }
+
+    public void foo(Runnable printFoo) throws InterruptedException {
+
+        for (int i = 0; i < n; i++) {
+            while (state != 0) {
+                Thread.yield();
+            }
+            printFoo.run();
+            state = 1;
+        }
+    }
+
+    public void bar(Runnable printBar) throws InterruptedException {
+
+        for (int i = 0; i < n; i++) {
+            while (state != 1) {
+                Thread.yield();
+            }
+            printBar.run();
+            state = 0;
         }
     }
 }
