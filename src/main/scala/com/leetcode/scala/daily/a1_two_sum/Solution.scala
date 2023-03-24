@@ -19,7 +19,6 @@ package com.leetcode.scala.daily.a1_two_sum
  * Example 3:
  * Input: nums = [3,3], target = 6
  * Output: [0,1]
- *  
  *
  * Constraints:
  * 2 <= nums.length <= 10^4
